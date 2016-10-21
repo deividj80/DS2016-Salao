@@ -42,13 +42,13 @@ public class ServicoDao implements IServicoDao {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Servico> buscar(Servico servico) {
-		Query query = entityManager.createQuery("from servico");
+		Query query = entityManager.createQuery("from Servico");
 		return query.getResultList();
 	}
 
 	@Override
 	public Servico buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from servico where idservico = :idservico");
+		Query query = entityManager.createQuery("from Servico where idservico = :idservico");
 		query.setParameter("idservico",id);
 		return (Servico)query.getSingleResult();
 	}

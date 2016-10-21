@@ -42,13 +42,13 @@ public class ProdutoDao implements IProdutoDao {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Produto> buscar(Produto produto) {
-		Query query = entityManager.createQuery("from produto");
+		Query query = entityManager.createQuery("from Produto");
 		return query.getResultList();
 	}
 
 	@Override
 	public Produto buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from produto where idproduto = :idproduto");
+		Query query = entityManager.createQuery("from Produto where idproduto = :idproduto");
 		query.setParameter("idproduto",id);
 		return (Produto)query.getSingleResult();
 	}
