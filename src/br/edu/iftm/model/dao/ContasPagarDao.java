@@ -42,13 +42,13 @@ public class ContasPagarDao implements IContasPagarDao {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<ContasPagar> buscar(ContasPagar contasPagar) {
-		Query query = entityManager.createQuery("from contas_pagar");
+		Query query = entityManager.createQuery("from Contas_pagar");
 		return query.getResultList();
 	}
 
 	@Override
 	public ContasPagar buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from contas_pagar where idcontaspagar = :idcontaspagar");
+		Query query = entityManager.createQuery("from Contas_pagar where idcontaspagar = :idcontaspagar");
 		query.setParameter("idcontaspagar",id);
 		return (ContasPagar)query.getSingleResult();
 	}

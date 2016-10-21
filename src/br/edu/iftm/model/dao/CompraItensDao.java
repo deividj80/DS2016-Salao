@@ -41,13 +41,13 @@ public class CompraItensDao implements ICompraItensDao {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<CompraItens> buscar(CompraItens compraItens) {
-		Query query = entityManager.createQuery("from compra_itens");
+		Query query = entityManager.createQuery("from Compra_itens");
 		return query.getResultList();
 	}
 
 	@Override
 	public CompraItens buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from compra_itens where idcompraitens = :idcompraitens");
+		Query query = entityManager.createQuery("from Compra_itens where idcompraitens = :idcompraitens");
 		query.setParameter("idcompraitens",id);
 		return (CompraItens)query.getSingleResult();
 	}

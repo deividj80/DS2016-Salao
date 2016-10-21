@@ -40,13 +40,13 @@ public class CategoriaDao implements ICategoriaDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Categoria> buscar(Categoria categoria) {
-		Query query = entityManager.createQuery("select * from categoria");
+		Query query = entityManager.createQuery("from Categoria");
 		return query.getResultList();
 	}
 
 	
 	public Categoria buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from categoria c where c.idcategoria = :idcat");
+		Query query = entityManager.createQuery("from Categoria where idcategoria = :idcat");
 		query.setParameter("idcat",id);
 		return (Categoria)query.getSingleResult();
 	}

@@ -42,13 +42,13 @@ public class ContasReceberDao implements IContasReceberDao {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<ContasReceber> buscar(ContasReceber contasReceber) {
-		Query query = entityManager.createQuery("from contas_receber");
+		Query query = entityManager.createQuery("from Contas_receber");
 		return query.getResultList();
 	}
 
 	@Override
 	public ContasReceber buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from contas_receber where idcontasreceber = :idcontasreceber");
+		Query query = entityManager.createQuery("from Contas_receber where idcontasreceber = :idcontasreceber");
 		query.setParameter("idcontasreceber",id);
 		return (ContasReceber)query.getSingleResult();
 	}

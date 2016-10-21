@@ -42,13 +42,13 @@ public class AgendaDao implements IAgendaDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Agenda> buscar(Agenda agenda) {
-		Query query = entityManager.createQuery("from agenda");
+		Query query = entityManager.createQuery("from Agenda");
 		return query.getResultList();
 	}
 
 	@Override
 	public Agenda buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from agenda where idagenda = :idagenda");
+		Query query = entityManager.createQuery("from Agenda where idagenda = :idagenda");
 		query.setParameter("idagenda",id);
 		return (Agenda)query.getSingleResult();
 	}

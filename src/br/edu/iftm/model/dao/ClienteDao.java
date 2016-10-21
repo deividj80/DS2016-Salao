@@ -43,13 +43,13 @@ public class ClienteDao implements IClienteDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Cliente> buscar(Cliente cliente) {
-		Query query = entityManager.createQuery("from cliente");
+		Query query = entityManager.createQuery("from Cliente");
 		return query.getResultList();
 	}
 
 	@Override
 	public Cliente buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from cliente where idcliente = :idcliente");
+		Query query = entityManager.createQuery("from Cliente where idcliente = :idcliente");
 		query.setParameter("idcliente",id);
 		return (Cliente)query.getSingleResult();
 	}

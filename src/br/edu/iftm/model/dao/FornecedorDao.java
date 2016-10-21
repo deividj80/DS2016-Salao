@@ -44,13 +44,13 @@ public class FornecedorDao implements IFornecedorDao {
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Fornecedor> buscar(Fornecedor fornecedor) {
-		Query query = entityManager.createQuery("from fornecedor");
+		Query query = entityManager.createQuery("from Fornecedor");
 		return query.getResultList();
 	}
 
 	@Override
 	public Fornecedor buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from fornecedor where idfornecedor = :idfornecedor");
+		Query query = entityManager.createQuery("from Fornecedor where idfornecedor = :idfornecedor");
 		query.setParameter("idfornecedor",id);
 		return (Fornecedor)query.getSingleResult();
 	}
