@@ -2,9 +2,7 @@ package br.edu.iftm.model.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.*;
 import javax.transaction.Transactional;
 
 import br.edu.iftm.model.domain.Categoria;
@@ -42,14 +40,14 @@ public class CategoriaDao implements ICategoriaDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Categoria> buscar(Categoria categoria) {
-		Query query = entityManager.createQuery("from categoria");
+		Query query = entityManager.createQuery("select * from categoria");
 		return query.getResultList();
 	}
 
-	@Override
+	
 	public Categoria buscarPorId(Integer id) {
-		Query query = entityManager.createQuery("from categoria where idcategoria = :idcategoria");
-		query.setParameter("idcategoria",id);
+		Query query = entityManager.createQuery("from categoria c where c.idcategoria = :idcat");
+		query.setParameter("idcat",id);
 		return (Categoria)query.getSingleResult();
 	}
 

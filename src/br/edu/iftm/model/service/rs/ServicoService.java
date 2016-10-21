@@ -18,8 +18,8 @@ import br.edu.iftm.model.domain.Servico;
 import br.edu.iftm.model.service.IServicoService;
 
 @Path("/servico")
-@Consumes({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
+@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
 public class ServicoService implements IServicoService {
 
 	@Inject
@@ -43,7 +43,7 @@ public class ServicoService implements IServicoService {
 	public void excluir(@PathParam("codigo") Integer codigo) {
 		servicoDao.excluir(codigo);
 	}
-	
+
 	@GET
 	@Override
 	@Path("/{codigo}")

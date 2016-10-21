@@ -2,12 +2,8 @@ package br.edu.iftm.model.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -21,10 +17,10 @@ public class Categoria implements Serializable {
 	private Integer idcategoria;
 	
 	@Column(name="nome")
-	private Integer nome;
+	private String nome;
 	
 	public Categoria(){
-		super();
+		
 	}
 
 	public Integer getIdcategoria() {
@@ -35,11 +31,11 @@ public class Categoria implements Serializable {
 		this.idcategoria = idcategoria;
 	}
 
-	public Integer getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(Integer nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
